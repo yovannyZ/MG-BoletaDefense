@@ -1,0 +1,7 @@
+C:\Users\Yovanny\Documents\GitHub\MG-BoletaDefense\MG-BoletaDefense\MG-BoletaDefense\bin\Release\MG-BoletaDefense.dll
+C:\Users\Yovanny\Documents\GitHub\MG-BoletaDefense\MG-BoletaDefense\MG-BoletaDefense\bin\Release\MG-BoletaDefense.pdb
+C:\Users\Yovanny\Documents\GitHub\MG-BoletaDefense\MG-BoletaDefense\MG-BoletaDefense\bin\Release\itextsharp.dll
+C:\Users\Yovanny\Documents\GitHub\MG-BoletaDefense\MG-BoletaDefense\MG-BoletaDefense\bin\Release\itextsharp.xml
+C:\Users\Yovanny\Documents\GitHub\MG-BoletaDefense\MG-BoletaDefense\MG-BoletaDefense\obj\Release\MG-BoletaDefense.csprojResolveAssemblyReference.cache
+C:\Users\Yovanny\Documents\GitHub\MG-BoletaDefense\MG-BoletaDefense\MG-BoletaDefense\obj\Release\MG-BoletaDefense.dll
+C:\Users\Yovanny\Documents\GitHub\MG-BoletaDefense\MG-BoletaDefense\MG-BoletaDefense\obj\Release\MG-BoletaDefense.pdb

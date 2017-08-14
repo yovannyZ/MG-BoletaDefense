@@ -11,7 +11,7 @@ namespace MG_BoletaDefense
 {
     public class Boleta : InterfaceBoleta
     {
-        public void GenerarBoleta(List<IBoleta> ListaCabecera, List<TBoleta> ListaDetalle)
+        public void GenerarBoleta(List<IBoleta> ListaCabecera, List<TBoleta> ListaDetalle,string Ruta)
         {
             foreach (var cabecera in ListaCabecera)
             {
@@ -20,7 +20,7 @@ namespace MG_BoletaDefense
                 using (Document oDocument = new Document())
                 {
                     oDocument.SetPageSize(PageSize.A4.Rotate());
-                    using (FileStream oFileStream = new FileStream(string.Format(@"{0}\{1}.pdf", @"D:\BoletasDefense",cabecera.CodigoTrabajador), FileMode.OpenOrCreate))
+                    using (FileStream oFileStream = new FileStream(string.Format(@"{0}\{1}.pdf", Ruta, cabecera.CodigoTrabajador), FileMode.OpenOrCreate))
                     {
                         //Definimos la fuente y el tamaño
                         // BaseFont bfTimes = BaseFont.CreateFont(BaseFont., BaseFont.CP1252, false);
@@ -32,6 +32,16 @@ namespace MG_BoletaDefense
 
                         PdfWriter.GetInstance(oDocument, oFileStream);
                         oDocument.Open();
+
+                        string rutaImagen = @"E:\BoletasPdf\Logo.png";
+                        // Creamos la imagen y le ajustamos el tamaño
+                        Image imagen =Image.GetInstance(rutaImagen);
+                        imagen.BorderWidth = 0;
+                        imagen.Alignment = Element.ALIGN_LEFT;
+                        float percentage = 0.0f;
+                        percentage = 150 / imagen.Width;
+                        imagen.ScalePercent(percentage * 100);
+                        oDocument.Add(imagen);
 
                         PdfPTable Boleta = new PdfPTable(2);
                         //Medidas de la tabla
@@ -281,7 +291,7 @@ namespace MG_BoletaDefense
                         //Cuarta Fila
                         PdfPTable CuartaFila = new PdfPTable(8);
 
-                        float[] medidaCuartaFila = { 101f, 101f, 101f, 100f, 100f, 100f, 100f, 100f };
+                        float[] medidaCuartaFila = { 163f, 70f, 70f, 160f, 80f, 80f, 80f, 100f };
                         CuartaFila.TotalWidth = 803f;
                         CuartaFila.LockedWidth = true;
                         CuartaFila.SetWidths(medidaCuartaFila);
@@ -365,20 +375,13 @@ namespace MG_BoletaDefense
                             }
                             else
                             {
-                                cell = new PdfPCell(new Phrase(" ", fontArialNormal));
-                                cell.HorizontalAlignment = Element.ALIGN_CENTER;
-                                cell.Border = Rectangle.RIGHT_BORDER;
-                                CuartaFila.AddCell(cell);
-
-                                cell = new PdfPCell(new Phrase(" ", fontArialNormal));
-                                cell.HorizontalAlignment = Element.ALIGN_CENTER;
-                                cell.Border = Rectangle.RIGHT_BORDER;
-                                CuartaFila.AddCell(cell);
-
-                                cell = new PdfPCell(new Phrase(" ", fontArialNormal));
-                                cell.HorizontalAlignment = Element.ALIGN_CENTER;
-                                cell.Border = Rectangle.RIGHT_BORDER;
-                                CuartaFila.AddCell(cell);      
+                                for (int j = 0; j < 3; j++)
+                                {
+                                    cell = new PdfPCell(new Phrase(" ", fontArialNormal));
+                                    cell.HorizontalAlignment = Element.ALIGN_CENTER;
+                                    cell.Border = Rectangle.RIGHT_BORDER;
+                                    CuartaFila.AddCell(cell);
+                                }
                             }
                             
                             if(i < DetallesRetenciones.Count)
@@ -410,58 +413,27 @@ namespace MG_BoletaDefense
                             }
                             else
                             {
-                                cell = new PdfPCell(new Phrase(" ", fontArialNormal));
-                                cell.HorizontalAlignment = Element.ALIGN_CENTER;
-                                cell.Border = Rectangle.RIGHT_BORDER;
-                                CuartaFila.AddCell(cell);
-
-                                cell = new PdfPCell(new Phrase(" ", fontArialNormal));
-                                cell.HorizontalAlignment = Element.ALIGN_CENTER;
-                                cell.Border = Rectangle.RIGHT_BORDER;
-                                CuartaFila.AddCell(cell);
-
-                                cell = new PdfPCell(new Phrase(" ", fontArialNormal));
-                                cell.HorizontalAlignment = Element.ALIGN_CENTER;
-                                cell.Border = Rectangle.RIGHT_BORDER;
-                                CuartaFila.AddCell(cell);
-
-                                cell = new PdfPCell(new Phrase(" ", fontArialNormal));
-                                cell.HorizontalAlignment = Element.ALIGN_CENTER;
-                                cell.Border = Rectangle.RIGHT_BORDER;
-                                CuartaFila.AddCell(cell);
-
-                                cell = new PdfPCell(new Phrase(" ", fontArialNormal));
-                                cell.HorizontalAlignment = Element.ALIGN_CENTER;
-                                cell.Border = Rectangle.RIGHT_BORDER;
-                                CuartaFila.AddCell(cell);
+                                for (int j = 0; j < 5; j++)
+                                {
+                                    cell = new PdfPCell(new Phrase(" ", fontArialNormal));
+                                    cell.HorizontalAlignment = Element.ALIGN_CENTER;
+                                    cell.Border = Rectangle.RIGHT_BORDER;
+                                    CuartaFila.AddCell(cell);
+                                }
                             }
-                           
-
-                            //for (int j = 0; j < 8; j++)
-                            //{
-                            //    if (i < 10)
-                            //    {
-                            //        cell = new PdfPCell(new Phrase(String.Format("DATO {0}", j + 1), fontArialNormal));
-                            //        cell.HorizontalAlignment = Element.ALIGN_CENTER;
-                            //        cell.Border = Rectangle.RIGHT_BORDER;
-                            //        CuartaFila.AddCell(cell);
-                            //    }
-                            //    else
-                            //    {
-                            //        cell = new PdfPCell(new Phrase(" "));
-                            //        cell.HorizontalAlignment = Element.ALIGN_CENTER;
-                            //        cell.Border = Rectangle.RIGHT_BORDER;
-                            //        CuartaFila.AddCell(cell);
-                            //    }
-                            //}
                         }
 
-                        for (int i = 0; i < 150 - count; i++)
+                        CuartaFila.Rows.Count();
+                        int filasRestantes = 20 - CuartaFila.Rows.Count();
+                        for (int i = 0; i < filasRestantes; i++)
                         {
-                            cell = new PdfPCell(new Phrase(" "));
-                            cell.HorizontalAlignment = Element.ALIGN_CENTER;
-                            cell.Border = Rectangle.RIGHT_BORDER;
-                            CuartaFila.AddCell(cell);
+                            for (int j = 0; j < 8; j++)
+                            {
+                                cell = new PdfPCell(new Phrase(" ", fontArialNormal));
+                                cell.HorizontalAlignment = Element.ALIGN_CENTER;
+                                cell.Border = Rectangle.RIGHT_BORDER;
+                                CuartaFila.AddCell(cell);
+                            }   
                         }
                         //->Fin de los detalles de cuerpo
 

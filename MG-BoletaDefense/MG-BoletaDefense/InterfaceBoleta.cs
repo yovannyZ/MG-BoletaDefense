@@ -8,6 +8,6 @@ namespace MG_BoletaDefense
 {
     public interface InterfaceBoleta
     {
-        void GenerarBoleta(List<IBoleta> ListaCabecera, List<TBoleta> ListaDetalle);
+        void GenerarBoleta(List<IBoleta> ListaCabecera, List<TBoleta> ListaDetalle, string Ruta);
     }
 }

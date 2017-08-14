@@ -5,3 +5,12 @@ C:\Users\Miguel\documents\visual studio 2015\Projects\MG-BoletaDefense\MG-Boleta
 C:\Users\Miguel\documents\visual studio 2015\Projects\MG-BoletaDefense\MG-BoletaDefense\obj\Debug\MG-BoletaDefense.dll
 C:\Users\Miguel\documents\visual studio 2015\Projects\MG-BoletaDefense\MG-BoletaDefense\obj\Debug\MG-BoletaDefense.pdb
 C:\Users\Miguel\documents\visual studio 2015\Projects\MG-BoletaDefense\MG-BoletaDefense\obj\Debug\MG-BoletaDefense.csprojResolveAssemblyReference.cache
+C:\Users\Yovanny\Documents\GitHub\MG-BoletaDefense\MG-BoletaDefense\MG-BoletaDefense\bin\Debug\MG-BoletaDefense.dll
+C:\Users\Yovanny\Documents\GitHub\MG-BoletaDefense\MG-BoletaDefense\MG-BoletaDefense\bin\Debug\MG-BoletaDefense.pdb
+C:\Users\Yovanny\Documents\GitHub\MG-BoletaDefense\MG-BoletaDefense\MG-BoletaDefense\bin\Debug\itextsharp.dll
+C:\Users\Yovanny\Documents\GitHub\MG-BoletaDefense\MG-BoletaDefense\MG-BoletaDefense\bin\Debug\itextsharp.xml
+C:\Users\Yovanny\Documents\GitHub\MG-BoletaDefense\MG-BoletaDefense\MG-BoletaDefense\obj\Debug\MG-BoletaDefense.csprojResolveAssemblyReference.cache
+C:\Users\Yovanny\Documents\GitHub\MG-BoletaDefense\MG-BoletaDefense\MG-BoletaDefense\obj\Debug\MG-BoletaDefense.dll
+C:\Users\Yovanny\Documents\GitHub\MG-BoletaDefense\MG-BoletaDefense\MG-BoletaDefense\obj\Debug\MG-BoletaDefense.pdb
+C:\Users\Yovanny\Documents\GitHub\MG-Planilla\MG-Planilla.AppWin\bin\Debug\MG-BoletaDefense.dll
+C:\Users\Yovanny\Documents\GitHub\MG-Planilla\MG-Planilla.AppWin\bin\Debug\MG-BoletaDefense.pdb
